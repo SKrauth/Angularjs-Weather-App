@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <title>Weather Stuff</title>
@@ -9,15 +9,16 @@
     
 <!--    Angular    -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
 </head>
-<body>
+<body ng-app="hipsterWeather">
    <div class="container">
         <ul class="nav nav-tabs">
             <li role="presentation"><a href="#/home">Home</a></li>
             <li role="presentation"><a href="#/weather">Weather</a></li>
         </ul>
     
-        <div>
+        <div ng-view>
             <p>IT'S WORKING</p>
         </div>
     <script src="js/app.js"></script>
