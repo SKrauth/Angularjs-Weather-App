@@ -1,11 +1,11 @@
 <div class="input-group">
     <label for="location">Location:</label>
-    <input type="text" class="form-control" ng-model="location">
+    <input type="text" class="form-control" ng-model="location" placeholder="Where are you?">
 </div>
 <button class="btn btn-primary" ng-click="getWeather()">Get McSweeny's Weather</button>
 
 <div ng-show = "showWeather">
-    <p>Location: {{ weatherData.latitude }}, {{ weatherData.longitude }}</p>
+    <p>Location: {{ formattedAddress }}</p>
     <p>Temp: {{ weatherData.currently.temperature }}</p>
     <p>Precip: {{ weatherData.currently.precipProbability }}</p>
     <p>Summary: {{ weatherData.currently.summary }}</p>
