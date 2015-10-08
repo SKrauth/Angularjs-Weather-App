@@ -9,8 +9,10 @@
     <h4>{{ weatherData.currently.summary }}</h4>
     <h1>{{ weatherData.currently.temperature }}&#176</h1>
     
+    <hr>
+    
     <div class="table-responsive">
-        <table align="center" class="table tabe-condensed">
+        <table align="center" class="table table-condensed borderless">
             <tr>
                 <td ng-repeat="(key, value) in weatherData.hourly.data">{{ value.time }}</td>
             </tr>
@@ -23,7 +25,9 @@
         </table>
     </div>
    
-    <table class="table table-striped">
+   <hr>
+   
+    <table class="table borderless">
         <tr ng-repeat="(key, value) in weatherData.daily.data">
             <td>{{ value.time }}</td>  
             <td><img src="" alt="{{ value.icon }}"></td>
@@ -31,6 +35,8 @@
             <td>{{ value.temperatureMin }}&#176</td>
         </tr>
     </table>
+    
+    <hr>
     
     <table class="table borderless">
         <tr>

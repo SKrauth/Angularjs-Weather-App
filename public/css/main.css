@@ -1,3 +1,13 @@
+/*Still needs tweeking, might not want the main scroll bar to disapear?*/
+::-webkit-scrollbar {
+    display: none;
+}
+
 .borderless td {
-    border: none;
-};
+    border-top: none !important;
+}
+/*
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: none !important;
+}*/

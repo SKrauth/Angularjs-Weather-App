@@ -1,7 +1,7 @@
 app.controller("WeatherController", function($scope, geocodeService, weatherService){
 //    $scope.latitude = 0;
 //    $scope.longitude = 0;
-    $scope.location = "";
+    $scope.location = "Gainesville, FL";
     $scope.weatherData = {};
     $scope.showWeather = false;
     $scope.formattedAddress = "";
@@ -60,7 +60,11 @@ app.controller("WeatherController", function($scope, geocodeService, weatherServ
                             $scope.weatherData.currently.windSpeed = chng;
                             chng = Math.round($scope.weatherData.currently.apparentTemperature);
                             $scope.weatherData.currently.apparentTemperature = chng;
-                        
+                            
+                            chng = Math.round($scope.weatherData.currently.visibility);
+                            $scope.weatherData.currently.visibility = chng;
+                            
+                            
                             $scope.showWeather = true;
                             console.log($scope.weatherData);
                     })
