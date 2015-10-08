@@ -5,8 +5,75 @@
 <button class="btn btn-primary" ng-click="getWeather()">Get McSweeny's Weather</button>
 
 <div ng-show = "showWeather">
-    <p>Location: {{ formattedAddress }}</p>
-    <p>Temp: {{ weatherData.currently.temperature }}</p>
-    <p>Precip: {{ weatherData.currently.precipProbability }}</p>
-    <p>Summary: {{ weatherData.currently.summary }}</p>
+    <h2>{{ formattedAddress }}</h2>
+    <h4>{{ weatherData.currently.summary }}</h4>
+    <h1>{{ weatherData.currently.temperature }}&#176</h1>
+    
+    <div class="table-responsive">
+        <table align="center" class="table tabe-condensed">
+            <tr>
+                <td ng-repeat="(key, value) in weatherData.hourly.data">{{ value.time }}</td>
+            </tr>
+            <tr>
+                <td ng-repeat="(key, value) in weatherData.hourly.data"><img src="" alt="{{ value.icon }}"></td>
+            </tr>
+            <tr>
+                <td ng-repeat="(key, value) in weatherData.hourly.data">{{ value.temperature }}&#176</td>
+            </tr>
+        </table>
+    </div>
+   
+    <table class="table table-striped">
+        <tr ng-repeat="(key, value) in weatherData.daily.data">
+            <td>{{ value.time }}</td>  
+            <td><img src="" alt="{{ value.icon }}"></td>
+            <td>{{ value.temperatureMax }}&#176</td>
+            <td>{{ value.temperatureMin }}&#176</td>
+        </tr>
+    </table>
+    
+    <table class="table borderless">
+        <tr>
+            <td align="right">Sunrise: </td>
+            <td align="left">{{ weatherData.daily.data[0].sunriseTime }}</td>
+        </tr>
+        <tr>
+            <td align="right">Sunset: </td>
+            <td align="left">{{ weatherData.daily.data[0].sunsetTime }}</td>
+        </tr>
+        <tr>
+            <td align="right">Chance of rain: </td>
+            <td align="left">{{ weatherData.currently.precipProbability }}&#37</td>
+        </tr>
+        <tr>
+            <td align="right">Humidity: </td>
+            <td align="left">{{ weatherData.currently.humidity }}&#37</td>
+        </tr>
+        <tr>
+            <td align="right">Wind: </td>
+<!--            Needs direction, .windbearing?, and rounding.-->
+            <td align="left">{{ weatherData.currently.windSpeed }} mph</td>
+        </tr>
+        <tr>
+            <td align="right">Feels Like: </td>
+            <td align="left">{{ weatherData.currently.apparentTemperature }}&#176</td>
+        </tr>
+        <tr>
+            <td align="right">Precipitation: </td>
+            <td align="left">{{ weatherData.currently.precipIntensity }} in</td>
+        </tr>
+        <tr>
+            <td align="right">Pressure: </td>
+            <td align="left">{{ weatherData.currently.pressure }} in</td>
+        </tr>
+        <tr>
+            <td align="right">Visibility: </td>
+            <td align="left">{{ weatherData.currently.visibility }} mi</td>    
+        </tr>
+        <tr>
+            <td align="right">UV Index: </td>
+<!--            Not sure this is the right data point, but I don't see a UV index in the api-->
+            <td align="left">{{ weatherData.currently.ozone }}</td>
+        </tr>
+    </table>
 </div>
