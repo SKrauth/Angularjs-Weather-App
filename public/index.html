@@ -11,14 +11,20 @@
 <!--    Angular    -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+    
+<!--    jQuery    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </head>
 <body ng-app="hipsterWeather">
    <div class="container">
-        <ul class="nav nav-tabs">
-            <li role="presentation"><a href="#/home">Home</a></li>
-            <li role="presentation"><a href="#/weather">Weather</a></li>
-        </ul>
-    
+       <div id = "table-fixed">
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a href="#/home">Home</a></li>
+                <li role="presentation"><a href="#/weather">Weather</a></li>
+            </ul>
+        </div>
+        
         <div ng-view>
             <p>IT'S WORKING</p>
         </div>
@@ -28,6 +34,7 @@
     <script src="js/services/weatherService.js"></script>
     <script src="js/controllers/HomeController.js"></script>
     <script src="js/controllers/WeatherController.js"></script>
+    <script src="js/navjQuery.js"></script>
     </div>
 </body>
 </html>
