@@ -1,11 +1,10 @@
-app.controller("WeatherController", function($scope, geocodeService, weatherService){
+app.controller("WeatherController", function($scope, $location,  geocodeService, weatherService){
 //    $scope.latitude = 0;
 //    $scope.longitude = 0;
     $scope.location = "Gainesville, FL";
     $scope.weatherData = {};
     $scope.showWeather = false;
     $scope.formattedAddress = "";
-    
     $scope.getWeather = function(){
         var latitude = 0;
         var longitude = 0;
@@ -66,7 +65,6 @@ app.controller("WeatherController", function($scope, geocodeService, weatherServ
                             
                             
                             $scope.showWeather = true;
-                            console.log($scope.weatherData);
                     })
                         .error(function(err){
                             console.log(err);

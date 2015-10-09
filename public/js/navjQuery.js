@@ -1,6 +1,8 @@
+//This is currently commented out of index.html. It is supposed to make the hourly table become fixed when it reaches the top of the page. There are currently problems with .offset() because it doesn't like the fact that I'm manipulating an object that doesn't exist on page load.
+
 $( document ).ready(function(){
     var fixedTable = $("#fixed-table");
-    var navHomeY = fixedTable.position();
+    var navHomeY = fixedTable.offset().top;
     console.log(navHomeY);
     var isFixed = false;
     var $w = $(window);

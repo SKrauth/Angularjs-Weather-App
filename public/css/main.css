@@ -10,3 +10,9 @@
 #fixed-table .table-condensed {
     height: 140px;
 }
+
+hr {
+    height: 2px;
+    color: black;
+    background: #333;
+}

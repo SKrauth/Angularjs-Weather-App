@@ -11,7 +11,7 @@
     
     <hr>
     
-    <div class="table-responsive" >
+    <div class="table-responsive" ng-model="tableFixed">
         <table align="center" class="table table-condensed borderless">
             <tr>
                 <td ng-repeat="(key, value) in weatherData.hourly.data">{{ value.time }}</td>
