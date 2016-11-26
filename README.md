@@ -8,7 +8,7 @@ If you'd like to try my code, I have two API keys in a config.js file that's in 
 
 ```JavaScript
 var forecastApiKey = "your api key here";
-var geocodingApiKey = "your api key here"
+var geocodingApiKey = "your api key here";
 ```
 
 then this should work for you.
